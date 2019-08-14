@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<package>
+    <name>Twenga_Smartfeed</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licences/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Completely automate your Google Shopping campaigns &amp; improve your ROI by up to 40% in a few days with Smart FEED by Twenga Solutions.</summary>
+    <description>Entrust your Google Shopping campaigns to Twenga Solutions!&#xD;
+By entrusting us with your campaigns, you'll no longer have to worry about the technical side of things: our teams are here to guide you.&#xD;
+Our Smart FEED solution helps you by completely automating your Google Shopping campaigns, very easily listing your products and therefore increasing your revenue and online visibility. &#xD;
+&#xD;
+Optimised product feed&#xD;
+Thanks to 10 years of expertise in traffic generation and merchant catalogue management, our solution restructures your product feed according to the Google chart.&#xD;
+We maximise click rate and offer visibility by rewriting product titles, automatically selecting the best photos and excluding products with a weak performance.&#xD;
+&#xD;
+Estimation of intention to buy&#xD;
+Twenga&#x2019;s Smart TRACKING is simple to install on merchant sites. It identifies the performance of each product and analyses user behaviour, thanks to advanced algorithms which take into account over 40 different indicators.&#xD;
+Based on the information collected, we estimate the intention to buy for each click and adjust your bids in real-time depending on sales potential. &#xD;
+&#xD;
+Automated bid management&#xD;
+AdWords bids are continually adjusted at the finest level in relation to your performance objectives, catalogue variations and shopping trends.&#xD;
+Hundreds of e-retailers have improved their performance with our Smart SEM solutions.&#xD;
+&#xD;
+User segmentation&#xD;
+The platform allows for the creation of segments based on client types and internet history, as well as your catalogue categories.&#xD;
+This feature allows for bidding strategy optimisation in real-time, in relation to different audience behaviour. &#xD;
+&#xD;
+Keyword optimisation&#xD;
+Performance is constantly evaluated and your keyword base is optimised in order to detect non-profitable terms to be deleted as well as which terms should be added.&#xD;
+The solution also automates the management of negative keywords on AdWords. &#xD;
+&#xD;
+Automated control based on your objectives&#xD;
+Our management interface allows you to set your performance indicators and adjust your objectives in each category of your catalogue, thanks to a practical and intuitive dashboard.&#xD;
+Your follow-up tool regroups your Smart LEADS and Smart SEM solutions for simplified management.&#xD;
+&#xD;
+ </description>
+    <notes>Extension for Magento 1.5.X and later.</notes>
+    <authors><author><name>Benjamin GOSSELET</name><user>Twenga</user><email>bgosselet@adexos.fr</email></author></authors>
+    <date>2016-06-22</date>
+    <time>12:32:06</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Twenga_Smartfeed.xml" hash="76370d36ed185248e8a3fc358bbb4ebe"/></dir></target><target name="magecommunity"><dir name="Twenga"><dir name="Smartfeed"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><file name="Account.php" hash="580bc857097d20a9568dd347b0bf193b"/></dir></dir></dir><file name="Tag.php" hash="78f6d9e4365f05b01b5fc80abd7a3bb5"/></dir><dir name="Helper"><file name="Data.php" hash="64b70683362f40c16e9786fc33477512"/></dir><dir name="Model"><file name="Observer.php" hash="7e1a0831a0f8dc4559dd6af0ff5e1a22"/></dir><dir name="controllers"><dir name="Adminhtml"><dir name="Smartfeed"><file name="IndexController.php" hash="7b8a97ecb6c3c9788438dc11bb4d95a7"/></dir></dir></dir><dir name="etc"><file name="config.xml" hash="f7f1a7ddcab8372e10fbba12c3df18fc"/><file name="system.xml" hash="883710aadb82e4805d160a1ee7dbbfdc"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="twenga_smartfeed.xml" hash="38da946bc3111a6db54d97ae8bcd409a"/></dir><dir name="template"><dir name="twenga_smartfeed"><file name="account.phtml" hash="99f08cc59e7e809c70fdebc0b799af94"/><file name="lost_password.phtml" hash="670491afcba22d7b1d21695269b4c297"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="twenga_smartfeed.xml" hash="658abd958345826d15e9b3da1a3d5baa"/></dir></dir></dir></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="twenga_smartfeed"><dir name="css"><file name="smartfeed.css" hash="e4be06f9de028054c4cb87d2b8b09248"/></dir><dir name="images"><file name="logo-smartfeed.png" hash="61997eaaccd7d0a90bcadf6e77aa387c"/><file name="sprite.png" hash="f57d330cc3b603cf6bd1cd0402135dd7"/><file name="window_close.png" hash="5ae5afd61e937fcd2d5b84641255ee4d"/></dir></dir></dir></dir></dir></target><target name="magelocale"><dir name="de_DE"><file name="Twenga_Smartfeed.csv" hash="82fec22a6100019d13801c0162fa4dbd"/></dir><dir name="fr_FR"><file name="Twenga_Smartfeed.csv" hash="fa6ddbb45506f9aedb5fc52f8c1de38f"/></dir><dir name="it_IT"><file name="Twenga_Smartfeed.csv" hash="7d25bcd856630239266a7b64d8bf8664"/></dir><dir name="es_ES"><file name="Twenga_Smartfeed.csv" hash="4a7ec8fe44d5e8ae6045f83fb905925e"/></dir><dir name="nl_NL"><file name="Twenga_Smartfeed.csv" hash="4a0d3d781045cb5ea290d383aa0d4f22"/></dir><dir name="pl_PL"><file name="Twenga_Smartfeed.csv" hash="526c52130b4c6f062545436eecf06321"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

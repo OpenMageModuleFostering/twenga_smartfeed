@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_smartfeed_index_index>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><value>twenga_smartfeed/css/smartfeed.css</value></action>
+            <action method="addJs"><script>prototype/window.js</script></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="smartfeed" template="twenga_smartfeed/account.phtml" />
+        </reference>
+    </adminhtml_smartfeed_index_index>
+
+    <adminhtml_smartfeed_index_lostpassword>
+        <reference name="root">
+            <action method="setTemplate"><template>empty.phtml</template></action>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><value>twenga_smartfeed/css/smartfeed.css</value></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="smartfeed" template="twenga_smartfeed/lost_password.phtml" />
+        </reference>
+    </adminhtml_smartfeed_index_lostpassword>
+</layout>

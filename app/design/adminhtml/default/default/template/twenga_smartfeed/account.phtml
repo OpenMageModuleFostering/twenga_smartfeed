@@ -1,0 +1,204 @@
+<!-- Params -->
+<?php $installSuccess = $this->getRequest()->getParam('install_success'); ?>
+<?php $emailExists = $this->getRequest()->getParam('email_exists'); ?>
+<?php $authenticationFailed = $this->getRequest()->getParam('authentication_failed'); ?>
+<?php $signupSuccess = $this->getRequest()->getParam('signup_success'); ?>
+<?php $localeCountry = Mage::app()->getLocale()->getLocaleCode(); ?>
+<?php $countryId = explode('_', $localeCountry); ?>
+
+<?php
+// Banner TwengaSolutions for GoogleShopping
+$text = $this->__('Unlock your Google Shopping performance with the most powerful automation solution');
+$image = '<a href="'.Mage::helper('smartfeed/data')->addUtm(array(), 'https://www.twenga-solutions.com/fr/smartsem/smartfeed/').'" target="_blank">
+    <img src="' . $this->getSkinUrl('twenga_smartfeed/images/logo-smartfeed.png') . '" />
+</a>';
+?>
+
+<!-- Content header -->
+<div class="content-header">
+    <table cellspacing="0">
+        <tbody>
+        <tr>
+            <td><h3 class="icon-head head-sales-transactions"><?php echo $this->__('Twenga Smart FEED'); ?></h3></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Steps -->
+<div class="tw-smartfeed-account">
+    <div class="tw-banner">
+        <div class="tw-banner-image"><?php echo $image; ?></div>
+        <div class="tw-banner-text"><?php echo $text; ?></div>
+    </div>
+
+    <!-- Step 1: Configure your account -->
+    <div class="tw-field">
+        <div id="tw-step-one" class="tw-step <?php echo $class; ?>">
+            <div class="tw-step-title"><?php echo $this->__('Step 1: Configure your account'); ?></div>
+        </div>
+
+        <div id="tw-account" class="tw-panel">
+            <div id="tw-signup">
+                <form id="tw-form-signup" action="<?php echo Mage::helper("adminhtml")->getUrl('adminhtml/smartfeed_index/postsignup'); ?>" method="POST">
+                    <?php echo $this->getBlockHtml('formkey') ?>
+                    <input type="hidden" name="country_id" value="<?php echo $countryId[1]; ?>"/>
+                    <?php $formSignup = Mage::helper('smartfeed/data')->getFormSignUp(); ?>
+                    <?php echo $formSignup['html']; ?>
+                </form>
+            </div>
+            <div id="tw-login" style="display:none;">
+                <form id="tw-form-login" action="<?php echo Mage::helper("adminhtml")->getUrl('adminhtml/smartfeed_index/authenticateemail'); ?>" method="POST">
+                    <?php echo $this->getBlockHtml('formkey') ?>
+                    <?php $formLogin = Mage::helper('smartfeed/data')->getFormLogin(); ?>
+                    <?php echo $formLogin['html']; ?>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 2: Finalise your module installation -->
+    <div class="tw-field">
+        <div id="tw-step-two" class="tw-step">
+            <div class="tw-step-title"><?php echo $this->__('Step 2: Finalise your Twenga Solutions module installation'); ?></div>
+        </div>
+
+        <div id="tw-finalization" class="tw-panel">
+            <div id="tw-tracking">
+                <?php if ($installSuccess == 1): ?>
+                    <!-- After install tracking -->
+                    <p class="tw-padding bold"><?php echo $this->__('Congratulations you have now installed Twenga Tracking!'); ?></p>
+                    <p class="tw-padding"><?php echo $this->__('With Twenga Tracking:'); ?></p>
+                    <ul class="tw-list">
+                        <li class="tw-line tw-padding"><?php echo $this->__('I can measure the quality of my traffic by following my conversion rates and acquisition costs per category.'); ?></li>
+                        <li class="tw-line tw-padding"><?php echo $this->__('I can optimise my budget by prioritising the highest performing offers thanks to Twenga\'s automatic settings.'); ?></li>
+                        <li class="tw-line tw-padding"><?php echo $this->__('I can secure my performance thanks to proactive monitoring and recommendations from the Twenga teams.'); ?></li>
+                    </ul>
+                    <div class="button-wrap">
+                        <div class="row">
+                            <div class="col-sm-5 col-sm-offset-3">
+                                <a href="<?php echo Mage::helper('smartfeed/data')->addUtm(array(), Mage::getStoreConfig('smartfeed/options/autolog_url')); ?>" target="_blank" class="btn btn-red btn-lg" id="tw-form-signup-submit"><?php echo $this->__('Continue to your interface'); ?></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php elseif ($signupSuccess == 1): ?>
+                    <!-- After signup success -->
+                    <div class="tw-warning"></div>
+                    <div class="tw-warning-padding"><?php echo $this->__('Warning: We have now taken your request into account. In order to benefit from our services you must finalise your subscription.'); ?></div>
+                    <div class="button-wrap">
+                        <div class="row">
+                            <div class="col-sm-5 col-sm-offset-3">
+                                <a href="<?php echo Mage::helper('smartfeed/data')->addUtm(array(), Mage::getStoreConfig('smartfeed/options/register_autolog_url')); ?>" target="_blank" class="btn btn-red btn-lg" id="tw-form-signup-submit"><?php echo $this->__('Finalise your subscription'); ?></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php elseif (Mage::getStoreConfig('smartfeed/options/token')): ?>
+                    <div class="tw-success"></div>
+                    <div class="tw-success-padding"><?php echo $this->__('If you have already installed the module on your website, please go to your Twenga Solutions interface.'); ?></div>
+                    <div class="button-wrap">
+                        <div class="row">
+                            <div class="col-sm-5 col-sm-offset-3">
+                                <a href="<?php echo Mage::helper('smartfeed/data')->addUtm(array(), Mage::getStoreConfig('smartfeed/options/autolog_url')); ?>" target="_blank" class="btn btn-red btn-lg" id="tw-form-signup-submit"><?php echo $this->__('Continue to your interface'); ?></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Javascript interaction -->
+<script type="text/javascript">
+    // <![CDATA[
+    function displayFormLogin() {
+        $("tw-signup").hide();
+        $("tw-login").show();
+
+        // Autoselect tw-email input
+        var tw_email = document.getElementById('tw-email');
+        tw_email.focus();
+        tw_email.select();
+    }
+
+    function displayFormSignup() {
+        $("tw-login").hide();
+        $("tw-signup").show();
+
+        // Autoselect firstname input
+        var firstname = document.getElementById('prenom');
+        firstname.focus();
+        firstname.select();
+    }
+
+    function displayNextStep() {
+        $("tw-signup").hide();
+        $("tw-finalization").show();
+        $("tw-step-one").classList.toggle("validate");
+        $("tw-step-two").classList.toggle("active");
+        $("tw-step-two").nextElementSibling.classList.toggle("show");
+    }
+    // ]]>
+</script>
+
+<!-- Load next step if tracking exists -->
+<?php if (Mage::getStoreConfig('smartfeed/options/token')): ?>
+    <script type="text/javascript">
+        displayNextStep();
+    </script>
+<?php else: ?>
+    <!-- No tracking also step 1 -->
+    <script type="text/javascript">
+        $("tw-finalization").hide();
+        $("tw-signup").show();
+        $("tw-step-one").classList.toggle("active");
+        $("tw-step-one").nextElementSibling.classList.toggle("show");
+    </script>
+
+    <script type="text/javascript">
+        // Autoselect firstname input
+        window.onload = function () {
+            var firstname = document.getElementById('prenom');
+            firstname.focus();
+            firstname.select();
+        }
+    </script>
+<?php endif; ?>
+
+<!-- Switch login and signup -->
+<script type="text/javascript">
+    //<![CDATA[
+    var switchLogin = document.getElementById("switch-login");
+    switchLogin.onclick = function () {
+        displayFormLogin();
+    }
+
+    var switchSignup = document.getElementById("switch-signup");
+    switchSignup.onclick = function () {
+        displayFormSignup();
+    }
+
+    var switchPassword = document.getElementById("lostpassword-btn");
+    switchPassword.setAttribute('onclick', 'javascript::void(0)');
+    switchPassword.onclick = function () {
+        win = new Window({url: '<?php echo Mage::helper("adminhtml")->getUrl('adminhtml/smartfeed_index/lostpassword'); ?>', width: 350, height: 128, minimizable: false, maximizable: false, showEffectOptions: {duration: 0.4}, hideEffectOptions: {duration: 0.4}});
+        win.setZIndex(100);
+        win.showCenter(true);
+        win.setCloseCallback();
+    }
+    //]]>
+</script>
+
+<!-- If email already exists or authentication failed also change interface -->
+<?php if ($emailExists == 1 || $authenticationFailed == 1): ?>
+    <script type="text/javascript">
+        displayFormLogin();
+    </script>
+<?php endif; ?>
+
+<!-- If signup success also change interface -->
+<?php if ($signupSuccess == 1): ?>
+    <script type="text/javascript">
+        displayNextStep();
+    </script>
+<?php endif; ?>

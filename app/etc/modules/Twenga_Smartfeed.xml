@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Twenga_Smartfeed>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Twenga_Smartfeed>
+    </modules>
+</config>

@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Twenga_Smartfeed>
+            <version>1.0.0</version>
+        </Twenga_Smartfeed>
+    </modules>
+
+    <global>
+        <resources>
+            <smartfeed_setup>
+                <setup>
+                    <module>Twenga_Smartfeed</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </smartfeed_setup>
+            <smartfeed_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </smartfeed_write>
+            <smartfeed_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </smartfeed_read>
+        </resources>
+
+        <models>
+            <smartfeed>
+                <class>Twenga_Smartfeed_Model</class>
+            </smartfeed>
+        </models>
+
+        <blocks>
+            <smartfeed>
+                <class>Twenga_Smartfeed_Block</class>
+            </smartfeed>
+        </blocks>
+
+        <helpers>
+            <smartfeed>
+                <class>Twenga_Smartfeed_Helper</class>
+            </smartfeed>
+        </helpers>
+
+        <events>
+            <admin_session_user_login_success>
+                <observers>
+                    <delete_data>
+                        <type>singleton</type>
+                        <class>Twenga_Smartfeed_Model_Observer</class>
+                        <method>deleteData</method>
+                    </delete_data>
+                </observers>
+            </admin_session_user_login_success>
+        </events>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <smartfeed>
+                    <file>twenga_smartfeed.xml</file>
+                </smartfeed>
+            </updates>
+        </layout>
+    </frontend>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <smartfeed after="Mage_Adminhtml">Twenga_Smartfeed_Adminhtml</smartfeed>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <Twenga_Smartfeed>
+                    <files>
+                        <default>Twenga_Smartfeed.csv</default>
+                    </files>
+                </Twenga_Smartfeed>
+            </modules>
+        </translate>
+
+        <layout>
+            <updates>
+                <smartfeed>
+                    <file>twenga_smartfeed.xml</file>
+                </smartfeed>
+            </updates>
+        </layout>
+
+        <menu>
+            <sales>
+                <children>
+                    <smartfeed translate="title" module="adminhtml">
+                        <title>Twenga Smart FEED</title>
+                        <sort_order>1000</sort_order>
+                        <action>adminhtml/smartfeed_index</action>
+                    </smartfeed>
+                </children>
+            </sales>
+        </menu>
+
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <smartfeed translate="title" module="smartfeed">
+                                            <title>Twenga Smart FEED</title>
+                                        </smartfeed>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                    <children>
+                        <sales>
+                            <children>
+                                <smartfeed translate="title" module="smartfeed">
+                                    <title>Twenga Smart FEED</title>
+                                </smartfeed>
+                            </children>
+                        </sales>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <default>
+        <smartfeed>
+            <options>
+                <active>1</active>
+            </options>
+        </smartfeed>
+    </default>
+</config>

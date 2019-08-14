@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Twenga_Smartfeed",
+    "type": "magento-module",
+    "license": "OSL-v3.0",
+    "homepage": "",
+    "description": "Completely automate your Google Shopping campaigns & improve your ROI by up to 40% in a few days with Smart FEED by Twenga Solutions.",
+    "authors": [
+    {
+        "name": "Benjamin GOSSELET",
+        "email": "bgosselet@adexos.fr"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

@@ -1,0 +1,283 @@
+/***** $GENERAL *****/
+
+.tw-smartfeed-account {
+    color: #474548;
+    cursor: default;
+    font-weight: normal;
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+}
+
+.tw-smartfeed-account .tw-field {
+    margin-bottom:15px;
+    border:1px solid #DDD;
+}
+
+.tw-smartfeed-account a,
+.tw-smartfeed-account a:hover {
+    color: #0a88c5;
+}
+
+.tw-smartfeed-account .button-wrap {
+    margin-top: 20px;
+    padding: 20px 0;
+    border-top: 1px dotted #DCDCDC;
+    background: #f8f8f8;
+}
+
+.tw-smartfeed-account .btn,
+.tw-smartfeed-password .btn {
+    padding: 3px 12px;
+    font-size: 15px;
+    margin-left:15px;
+    border:0;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration:none;
+}
+
+.tw-smartfeed-account .btn:focus,
+.tw-smartfeed-account .btn:hover,
+.tw-smartfeed-password .btn:focus,
+.tw-smartfeed-password .btn:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.tw-smartfeed-account .btn-red,
+.tw-smartfeed-password .btn-red {
+    background: #ee7b65;
+}
+
+.tw-smartfeed-account .btn-red:focus,
+.tw-smartfeed-account .btn-red:hover,
+.tw-smartfeed-password .btn-red:focus,
+.tw-smartfeed-password .btn-red:hover {
+    background: #d73819;
+}
+
+.tw-smartfeed-account .btn-white {
+    color: #0a88c5;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    font-weight: 700;
+    text-align: left;
+    font-size: 17px;
+    background: #fff;
+}
+
+.tw-smartfeed-account .btn-white:focus,
+.tw-smartfeed-account .btn-white:hover {
+    color: #0a88c5;
+    background: #f8f8f8;
+}
+
+.tw-smartfeed-account .btn-lg {
+    padding: 12px 30px;
+    font-size: 17px;
+}
+
+.tw-smartfeed-account .tw-warning {
+    width:28px;
+    height:28px;
+    background:url('../images/sprite.png') no-repeat 0px -69px;
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:15px;
+}
+
+.tw-smartfeed-account .tw-warning-padding {
+    display:inline-block;
+    vertical-align:middle;
+    color:#F29625;
+    font-weight:bold;
+    height:16px;
+    padding-left:7px;
+}
+
+.tw-smartfeed-account .tw-success {
+    width:28px;
+    height:28px;
+    background:url('../images/sprite.png') no-repeat -28px -69px;
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:15px;
+}
+
+.tw-smartfeed-account .tw-success-padding {
+    display:inline-block;
+    vertical-align:middle;
+    color:#1ABC9C;
+    font-weight:bold;
+    height:16px;
+    padding-left:7px;
+}
+
+/***** $BANNER *****/
+.tw-smartfeed-account .tw-banner {
+    padding:10px 15px 15px 0px;
+}
+
+.tw-smartfeed-account .tw-banner-text {
+    font-size: 16px;
+    margin-left: 3px;
+    margin-bottom: 10px;
+}
+
+/***** $STEP *****/
+.tw-smartfeed-account .tw-step {
+    background: #FFFFFF;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    -webkit-transition:0.4s;
+    transition: 0.4s;
+    color: #AAAAAA;
+}
+
+.tw-smartfeed-account .tw-step.validate {
+    color: #0a88c5 !important;
+    font-weight:bold;
+}
+
+.tw-smartfeed-account .tw-step.active {
+    color: #444444;
+}
+
+.tw-smartfeed-account .tw-step-title {
+    width:100%;
+    padding: 15px 0 15px 15px;
+    font-size:14px;
+}
+
+/***** $STEP CONTENT *****/
+.tw-smartfeed-account .tw-panel {
+    background: white;
+    display: none;
+    padding-top:5px;
+}
+
+.tw-smartfeed-account .tw-panel.show {
+    display: block !important;
+}
+
+.tw-smartfeed-account .tw-panel input {
+    border:1px solid #DDDDDD;
+    width:250px;
+    padding:2px 5px;
+}
+
+.tw-smartfeed-account .tw-panel input:focus {
+    border:1px solid #444444;
+}
+
+.tw-smartfeed-account .tw-panel .form-group {
+    margin-bottom:5px;
+}
+
+.tw-smartfeed-account .tw-padding {
+    padding: 0 15px;
+}
+
+.tw-smartfeed-account .bold {
+    font-weight:bold;
+}
+
+.tw-smartfeed-account .tw-line {
+    list-style:inside;
+}
+
+/***** $SWITCH *****/
+.tw-smartfeed-account #switch-login,
+.tw-smartfeed-account #switch-signup {
+    display: inline-block;
+    margin-left: 15px;
+    color: #0a88c5;
+    font-weight:bold;
+    cursor: pointer;
+}
+
+/***** $LOST PASSWORD *****/
+.tw-smartfeed-password {
+    background: #f8f8f8;
+    padding:15px;
+}
+
+.tw-smartfeed-password .tw-smartfeed-title {
+    text-align:center;
+    width:100%;
+    display:block;
+    font-size:16px;
+    color:#0a88c5;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.tw-smartfeed-password input {
+    border:1px solid #DDDDDD;
+    width:308px;
+    padding:2px 5px;
+}
+
+.tw-smartfeed-password .button-wrap {
+    padding:10px 0 0 0;
+    background: #f8f8f8;
+    text-align:right;
+}
+
+.tw-smartfeed-password #ajaxerror {
+    color:#d73819;
+    margin-bottom:10px;
+}
+
+.tw-smartfeed-password #ajaxsuccess {
+    color:#1ABC9C;
+    margin-bottom:10px;
+}
+
+.tw-smartfeed-password #close {
+    position: absolute;
+    top: 19px;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor:pointer;
+    display:none;
+}
+
+/***** $OVERRIDE WINDOW *****/
+.dialog_nw,
+.dialog_w,
+.dialog_n,
+.dialog_ne,
+.dialog_sw,
+.dialog_s,
+.dialog_sizer,
+.dialog_e {
+    background:#DDDDDD;
+}
+
+.dialog_content {
+    background:#F8F8F8;
+}
+
+.dialog_close {
+    width: 16px;
+    height: 16px;
+    background: transparent url('../images/window_close.png') no-repeat 0 0;
+    right: 10px;
+    left:auto;
+    top:5px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.dialog_sw,
+.dialog_s,
+.dialog_sizer {
+    height: 2px;
+}
